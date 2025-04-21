@@ -1,0 +1,13 @@
+h5py
+k_means_constrained
+matplotlib
+numpy
+pandas
+Pillow
+scikit_learn
+scipy
+scikit-image
+tqdm
+
+# Install these separately with CUDA support:
+# pip install torch torchvision --index-url https://download.pytorch.org/whl/cu121
