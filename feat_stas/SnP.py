@@ -133,8 +133,8 @@ def training_set_search(tpaths, data_dict, dataset_id, opt, result_dir, c_num, v
     did_per_id = new_pid_did_fid_var[:,1]
     # clustering ids based on ids' mean feature
     if not os.path.exists(result_dir + '/label_cluster_'+str(c_num)+'.npy'):
-        # estimator = KMeans(n_clusters=c_num)
-        estimator = KMeansConstrained(n_clusters=c_num, size_min=int(np.shape (new_mean_feature_per_id)[0] / c_num ), size_max=int(np.shape (new_mean_feature_per_id)[0] / c_num))
+        estimator = KMeans(n_clusters=c_num)
+        # estimator = KMeansConstrained(n_clusters=c_num, size_min=int(np.shape (new_mean_feature_per_id)[0] / c_num ), size_max=int(np.shape (new_mean_feature_per_id)[0] / c_num))
         estimator.fit(new_mean_feature_per_id)
         label_pred = estimator.labels_
         np.save(result_dir + '/label_cluster_'+str(c_num)+'.npy',label_pred)
